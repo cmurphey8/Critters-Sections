@@ -19,22 +19,6 @@ public class Mouse extends Critter {
 
     // YOU DO: override eat(), getColor(), toString(), lose() methods
     // QUESTION: what needs updating if this mouse loses a fight?
-    public boolean eat() {
-        return true;
-    }
-
-    public Color getColor() {
-        return Color.LIGHT_GRAY;
-    }
-
-    public String toString() {
-        return "x";
-    }
-
-    // YOU DO: if a mouse dies, let all mice know their target is up for grabs
-    public void lose() {
-        targets[nextCol][nextRow] = false;
-    }
 
     public Direction getMove(String[][] grid) {
         // initialize static grid targets
@@ -63,20 +47,11 @@ public class Mouse extends Critter {
 
     // YOU DO: if food is one cell away, move towards it
     private Direction grabFood() {
-        for (int i = 0; i < moves.length; i++) {
-            if (getNeighbor(moves[i]).equals(".")) return moves[i];
-        }
         return Direction.CENTER;
     }
 
     // YOU DO: if enemy is one cell away, move in the opposite direction and then wait
     private Direction evade() {
-        for (int i = 0; i < moves.length; i++) {
-            if (!getNeighbor(moves[i]).equals(" ") && !getNeighbor(moves[i]).equals("x")) {
-                waitSteps = waitTime;   // update wait steps
-                return moves[(i + 2) % moves.length];
-            }
-        }
         return Direction.CENTER;
     }
 
@@ -86,7 +61,7 @@ public class Mouse extends Critter {
         boolean lateTarget = grid[nextCol][nextRow] != "."; 
 
         // YOU DO: use booleans above to determine whether we need a new target
-        if (noTarget && (hasTarget || lateTarget)) {
+        if (true) {
             needsTarget = true; 
             targets[nextCol][nextRow] = false;
         }
@@ -139,8 +114,8 @@ public class Mouse extends Critter {
 
     // YOU DO: return the minimum distance from mousePos to foodPos
     public int dist(int foodPos, int mousePos, int worldSize) {
-        int inFrame = Math.abs(foodPos - mousePos);
-        int wrapFrame = Math.min(worldSize - mousePos + foodPos, worldSize - foodPos + mousePos) + 1;
+        int inFrame = 0;
+        int wrapFrame = 0;
         return Math.min(inFrame, wrapFrame);
       }
 
