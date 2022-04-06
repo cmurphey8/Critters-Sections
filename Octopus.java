@@ -10,14 +10,8 @@ public class Octopus extends Critter {
     private final Direction[] moves = {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
     
     // WE DO: always pounce
-    public Attack fight(String opponent) {
-		return Attack.POUNCE;
-	}
 
     // WE DO: always yellow
-    public Color getColor() {
-        return Color.YELLOW;
-    }
 
     // WE DO: scan the area for other Critters and add to String nearby
     public Direction getMove(String[][] grid) {
