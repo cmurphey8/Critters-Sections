@@ -112,7 +112,7 @@ public class Mouse extends Critter {
         }
     }
 
-    // YOU DO: return the minimum distance from mousePos to foodPos
+    // YOU DO: update inFrame and wrapFrame to return the minimum distance from mousePos to foodPos
     public int dist(int foodPos, int mousePos, int worldSize) {
         int inFrame = 0;
         int wrapFrame = 0;
